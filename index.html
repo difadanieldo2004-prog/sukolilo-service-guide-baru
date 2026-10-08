@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sukolilo Service Guide</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+         background-image: url('gambar-bawah.png');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+    radial-gradient(circle at 15% 20%, rgba(20, 91, 150, 0.10) 0 8px, transparent 9px),
+    radial-gradient(circle at 85% 75%, rgba(20, 91, 150, 0.08) 0 10px, transparent 11px),
+    repeating-linear-gradient(
+        45deg,
+        transparent 0px,
+        transparent 18px,
+        rgba(30, 100, 160, 0.045) 19px,
+        rgba(30, 100, 160, 0.045) 21px,
+        transparent 22px,
+        transparent 40px
+    ),
+    repeating-linear-gradient(
+        -45deg,
+        transparent 0px,
+        transparent 18px,
+        rgba(30, 100, 160, 0.045) 19px,
+        rgba(30, 100, 160, 0.045) 21px,
+        transparent 22px,
+        transparent 40px
+    );
+
+        /* =========================
+           NAVBAR
+        ========================= */
+        .navbar {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 45px;
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #222;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .navbar a:hover {
+            color: #07558a;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+        .hero {
+            min-height: 570px;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 45, 85, 0.35),
+                    rgba(0, 45, 85, 0.45)
+                ),
+                url("sukolilo-bg.png");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 50px;
+            padding: 60px 7%;
+        }
+
+
+        /* =========================
+           BAGIAN KIRI HERO
+        ========================= */
+        .hero-left {
+            max-width: 700px;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+        }
+
+        .hero-left h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 22px;
+            font-weight: 800;
+        }
+
+        .hero-left h2 {
+            font-size: 27px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero-left p {
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: white;
+            color: #064b78;
+
+            padding: 16px 28px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #f1f7fb;
+        }
+
+
+        /* =========================
+           INFORMASI LAYANAN
+        ========================= */
+        .info-card {
+            width: 390px;
+
+            background: rgba(255,255,255,0.94);
+
+            border-radius: 22px;
+
+            padding: 35px;
+
+            color: #263746;
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,0.22);
+
+            backdrop-filter: blur(4px);
+        }
+
+        .info-card h2 {
+            color: #064b78;
+            font-size: 28px;
+            margin-bottom: 28px;
+        }
+
+        .info-item {
+            margin-bottom: 24px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 7px;
+            color: #222;
+        }
+
+        .info-item p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           BAGIAN BAWAH
+        ========================= */
+        .intro {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: #07558a;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+
+        /* =========================
+           MENU HALAMAN
+        ========================= */
+        .menu-pages {
+            max-width: 1100px;
+            margin: 0 auto 70px;
+            padding: 0 25px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .page-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+
+            text-decoration: none;
+            color: #12304f;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+
+            transition: 0.2s;
+        }
+
+        .page-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .page-card h3 {
+            color: #07558a;
+            margin-bottom: 10px;
+        }
+
+        .page-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+        footer {
+            background: #064b78;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+        @media (max-width: 900px) {
+
+            .hero {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 50px 25px;
+            }
+
+            .hero-left {
+                max-width: 100%;
+            }
+
+            .hero-left h1 {
+                font-size: 42px;
+            }
+
+            .hero-left h2 {
+                font-size: 23px;
+            }
+
+            .info-card {
+                width: 100%;
+            }
+
+            .menu-pages {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .navbar a {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <a href="index.html">Beranda</a>
+
+    <a href="panduan.html">Panduan Layanan</a>
+
+    <a href="tentang.html">Tentang Magang</a>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+    <!-- BAGIAN KIRI -->
+
+    <div class="hero-left">
+        <img src="logo-unesa.png" alt="Logo UNESA" style="width: 100px; margin-bottom: 20px;">
+
+        <h1>
+            Sukolilo Service Guide
+        </h1>
+
+        <h2>
+            Informasi Pelayanan Kecamatan Sukolilo
+        </h2>
+
+        <p>
+            Lebih Mudah, Lebih Dekat, untuk Anda.
+        </p>
+
+        <a href="panduan.html" class="button">
+            Lihat Panduan Layanan
+        </a>
+
+    </div>
+
+
+
+    <!-- BAGIAN KANAN -->
+
+    <div class="info-card">
+
+        <h2>
+            Informasi Layanan
+        </h2>
+
+
+        <div class="info-item">
+
+            <strong>
+                Jam Operasional
+            </strong>
+
+            <p>
+                Senin–Jumat<br>
+                08.00–16.00 WIB
+            </p>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <strong>
+                Lokasi Kantor Kecamatan
+            </strong>
+
+            <p>
+                Jl. Nginden Semolo No. 89, Surabaya
+            </p>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <strong>
+                Informasi & Kontak Kecamatan
+            </strong>
+
+            <p>
+                Telp: 081393809868
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <div class="header" style="
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: -20px;
+    background: linear-gradient(135deg, #073361, #0e396a);
+    border-radius: 0 0 35px 35px;
+">
+
+    <h1 style="
+    display: inline-block;
+    margin: 0 0 18px 0;
+    padding: 14px 40px;
+    background: #e9ecef;
+    color: rgb(8, 39, 104);
+    border-radius: 50px;
+    font-size: 36px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+">
+    Sukolilo Service Guide
+</h1>
+
+    <p style="
+        margin: 0 auto;
+        max-width: 850px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #f2f3f4;
+    ">
+        Portal informasi pelayanan publik Kecamatan Sukolilo
+        yang menyajikan informasi layanan secara sederhana,
+        terstruktur, dan mudah diakses oleh masyarakat.
+    </p>
+
+</div>
+
+
+
+
+<!-- =========================
+     MENU HALAMAN
+========================= -->
+
+<section class="menu-pages">
+
+
+    <a href="visi-misi.html" class="page-card">
+
+        <h3>
+            Visi & Misi Kecamatan
+        </h3>
+
+        <p>
+            Informasi mengenai visi dan misi Kecamatan Sukolilo.
+        </p>
+
+    </a>
+
+
+
+    <a href="pemerintahan.html" class="page-card">
+
+        <h3>
+            Bidang Pemerintahan
+        </h3>
+
+        <p>
+            Informasi pelayanan dan administrasi bidang pemerintahan.
+        </p>
+
+    </a>
+
+
+
+    <a href="pembangunan.html" class="page-card">
+
+        <h3>
+            Bidang Pembangunan
+        </h3>
+
+        <p>
+            Informasi pelayanan terkait pembangunan dan perizinan.
+        </p>
+
+    </a>
+
+
+
+    <a href="kependudukan.html" class="page-card">
+
+        <h3>
+            Bidang Kependudukan
+        </h3>
+
+        <p>
+            Informasi layanan administrasi kependudukan.
+        </p>
+
+    </a>
+
+
+
+    <a href="kesra.html" class="page-card">
+
+        <h3>
+            Bidang Kesejahteraan Rakyat
+        </h3>
+
+        <p>
+            Informasi layanan di bidang kesejahteraan masyarakat.
+        </p>
+
+    </a>
+
+
+
+    <a href="panduan.html" class="page-card">
+
+        <h3>
+            Panduan Layanan
+        </h3>
+
+        <p>
+            Lihat berbagai kategori dan panduan pelayanan Kecamatan Sukolilo.
+        </p>
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+    
+
+   <div class="footer">
+
+    <p style="color: white;">
+        Sukolilo Service Guide - Kecamatan Sukolilo
+    </p>
+
+    <p style="color: white;">
+        Program Studi S1 Ilmu Politik UNESA © 2026 
+    </p>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

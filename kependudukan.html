@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kependudukan - Sukolilo Service Guide</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* NAVIGASI */
+        .top-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            padding: 16px 20px;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .top-menu a:hover {
+            color: #2563eb;
+        }
+
+        /* HEADER */
+        .header {
+            background-color: #0f3d68;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* JUDUL */
+        .section-title {
+            background-color: white;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border-left: 6px solid #0f3d68;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-title h2 {
+            margin: 0;
+            color: #0f3d68;
+        }
+
+        /* KOTAK LAYANAN */
+        .service {
+            background-color: white;
+            margin-top: 18px;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .service h3 {
+            margin: 0;
+            color: #111827;
+            cursor: pointer;
+        }
+
+        .service h3:hover {
+            color: #0f3d68;
+        }
+
+        /* ISI PERSYARATAN */
+        .service-content {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .service-content p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .service-content ul {
+            margin-top: 5px;
+            padding-left: 25px;
+        }
+
+        .service-content li {
+            margin-bottom: 6px;
+        }
+
+        /* PETUNJUK */
+        .hint {
+            background: #eef6ff;
+            color: #0f3d68;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #0f3d68;
+            color: white;
+            text-align: center;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            .header h1 {
+                font-size: 27px;
+            }
+
+            .header p {
+                font-size: 15px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .service {
+                padding: 18px;
+            }
+
+            .top-menu {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGASI -->
+    <nav class="top-menu">
+        <a href="index.html">Beranda</a>
+        <a href="panduan.html">Panduan Layanan</a>
+        <a href="tentang.html">Tentang Magang</a>
+    </nav>
+
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Bidang Pemerintahan</h1>
+        <p>Kependudukan Kecamatan Sukolilo</p>
+    </div>
+
+
+    <!-- ISI -->
+    <main class="container">
+
+        <div class="section-title">
+            <h2>Pelayanan Kependudukan</h2>
+
+            <div class="hint">
+                Klik nama layanan untuk melihat persyaratan.
+            </div>
+        </div>
+
+
+        <!-- 1 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                1. Cetak Kartu Keluarga karena Hilang
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KTP</li>
+                    <li>Surat Kehilangan KK</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 2 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                2. Cetak Kartu Keluarga karena Rusak
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KTP</li>
+                    <li>KK yang Rusak</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 3 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                3. Perubahan Biodata dalam KK
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KK</li>
+                    <li>Dokumen Pendukung Perubahan Biodata</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 4 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                4. Cetak Ulang KTP YOB
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KTP</li>
+                    <li>KK</li>
+                    <li>Surat Pernyataan Merubah Foto apabila tanda tangan di KTP kosong</li>
+                    <li>Surat Pernyataan Tanda Tangan apabila tanda tangan di KTP kosong</li>
+                    <li>Foto Bukti Kepemilikan IKD</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 5 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                5. Cetak Ulang KTP
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KTP</li>
+                    <li>KK</li>
+                    <li>Surat Kehilangan Kepolisian apabila alasan pengajuan KTP hilang</li>
+                    <li>Foto Bukti Kepemilikan IKD</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 6 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                6. Pengajuan KTP Baru usia 17 tahun / usia &lt;17 tahun
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KK</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 7 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                7. Permutakhiran Gelar dalam KK
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                  <li>KK</li>
+                  <li>Dokumen Pendukung Perubahan Gelar</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 8 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                8. Akta Kelahiran
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KK</li>
+                    <li>KTP Orang Tua</li>
+                    <li>Buku Nikah Orang Tua</li>
+                    <li>Surat Keterangan Lahir</li>
+                    <li>Fotokopi KTP 2 Orang Saksi</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 9 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                9. Akta Kematian
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KK Alm</li>
+                    <li>KTP Alm</li>
+                    <li>Surat Keterangan Meninggal Dunia</li>
+                    <li>KTP Pelopor</li>
+                    <li>Fotokopi KTP 2 Orang Saksi</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 10 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                10. Pindah Keluar
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KK</li>
+                    <li>KTP Pelapor</li>
+                    <li>KK Tujuan apabila status kepindahan menumpang KK</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 11 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                11. Kutipan Kedua Akta Kelahiran (Cetak Ulang Akta)
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KTP</li>
+                    <li>KK</li>
+                    <li>Akta Kelahiran</li>
+                    <li>Surat Kehilangan dari Kepolisian apabila hilang</li>
+                    <li>Surat Keabsahan Akta Kelahiran</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 12 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                12. Kutipan Kedua Kematian karena Rusak
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KTP</li>
+                    <li>Akta Kematian</li>
+                    <li>Fotokopi KK</li>
+                    <li>Surat Pernyataan yang menyatakan semua saudara kandung jika tidak keberatan diwakilkan oleh salah satu saudara kandung bermaterai 10.000 (optional)</li>
+                    <li>Surat Pernyataan jika memang anak Tunggal bermaterai 10.000 (optional)</li>
+                    <li>Surat Keabsahan apabila akta kematian terbitan luar Kota Surabaya</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 13 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                13. Kutipan Kedua Kematian karena Hilang Domisili Kota Surabaya
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KTP</li>
+                    <li>Fotokopi Akta Kematian</li>
+                    <li>Surat Kehilangan dari Kepolisian (wajib)</li>
+                    <li>Fotokopi KK (wajib)</li>
+                    <li>KTP Saudara Kandung bermaterai 10.000 (optional)</li>
+                    <li>Surat Pernyataan jika memang anak Tunggal bermaterai 10.000 (optional)</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 14 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                14. Kutipan Kedua Perkawinan
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KK</li>
+                    <li>KTP</li>
+                    <li>Kutipan Akta Perkawinan</li>
+                    <li>Surat Keabsahan Akta Perkawinan jika akta perkawinan terbitan luar Kota Surabaya</li>
+                    <li>Lampiran Perjanjian Pernikahan</li>
+                    <li>Surat Kehilangan jika akta perkawinan hilang</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 15 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                15. Akta Perkawinan dan Cetak KK
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>Surat Keterangan Kawin dari Pemuka Agama</li>
+                    <li>Pas Foto Calon Mempelai 4x6</li>
+                    <li>KK bila calon mempelai bukan KK Surabaya</li>
+                    <li>Lampiran Perjanjian Pernikahan</li>
+                    <li>Surat Keterangan tidak ada halangan menikah</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- 16 -->
+        <div class="service">
+
+            <h3 onclick="toggleService(this)">
+                16. KIA (Kartu Identitas Anak)
+            </h3>
+
+            <div class="service-content">
+
+                <p>Persyaratan:</p>
+
+                <ul>
+                    <li>KK</li>
+                    <li>KTP Orang Tua</li>
+                    <li>Akta Kelahiran</li>
+                    <li>Buku Nikah Orang Tua</li>
+                    <li>Scan Rapot / Surat Keterangan Sekolah (usia &gt;5 tahun)</li>
+                    <li>Foto Anak (usia &gt;5 tahun)</li>
+                </ul>
+
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>
+            Sukolilo Service Guide - Kecamatan Sukolilo
+        </p>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function toggleService(title) {
+
+            const content = title.nextElementSibling;
+
+            if (content.style.display === "none" || content.style.display === "") {
+
+                content.style.display = "block";
+
+            } else {
+
+                content.style.display = "none";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
